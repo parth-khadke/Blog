@@ -1,0 +1,29 @@
+import java.util.Scanner;
+
+class NumerologyCalculator
+{
+    public static void main(String[] args)
+    {
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Enter the day of birth: ");
+        int day = scan.nextInt();
+        
+        int PsyNum = 0; // Initialize PsyNum
+
+       if(day > 9) // Correct the condition to check day
+        {
+            PsyNum += day % 10;
+            PsyNum += day / 10;
+            if(PsyNum > 9)
+            {
+                PsyNum = (PsyNum % 10) + (PsyNum / 10);
+            }       
+        }
+        else
+        {
+         PsyNum = day; // Assign day to PsyNum   
+        }
+
+        System.out.println("Psychic Number: " + PsyNum);
+    }
+}
